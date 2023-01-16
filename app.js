@@ -5,7 +5,7 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 const connectDB = require("./db/connect");
-const morgan = require("morgan");
+
 
 const tasks = require("./routes/tasks");
 const users = require("./routes/user");
@@ -16,7 +16,7 @@ const notFoundMiddleware = require('./middleware/not-found');
 const errorHandlerMiddleware = require('./middleware/error-handler');
 const auth = require("./middleware/auth")
 // middleware
-// app.use(morgan("tiny"));
+
 app.use(cors());
 app.use(express.static("./public/build"));
 app.use(express.json());
