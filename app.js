@@ -18,13 +18,12 @@ const auth = require("./middleware/auth")
 // middleware
 
 app.use(cors());
-app.use(express.static("./public/build"));
 app.use(express.json());
 
 // routes
 app.use("/api/v1/users", users);
-
 app.use("/api/v1/tasks", auth, tasks);
+// app.use(express.static("./public/build"));
 
 app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);
